@@ -1,5 +1,6 @@
 package com.impactrecipes.recipes;
 
+import com.github.technus.tectech.thing.CustomItemList;
 import com.impact.common.item.Core_Items;
 import com.impact.common.item.Core_Items2;
 import com.impact.mods.gregtech.GT_ItemList;
@@ -864,6 +865,40 @@ public class Gregtech implements Runnable {
                 GT_OreDictUnificator.get(OrePrefixes.plateDouble, Materials.Americium, 16),
                 GT_OreDictUnificator.get(OrePrefixes.plateTriple, Materials.Pikyonium64B, 16)
         }, ItemList.LargePlasmaTurbine.get(1L), null, 100 * 20, 500000);
+
+        //AutomatableDataAccessHatch
+        RA.addBasicLineRecipe(new ItemStack[]{
+                ItemList.Hull_UV.get(1L),
+                Itemstack(Core_Items2.getInstance(), 1, 182),
+                ItemList.Tool_DataOrb.get(2),
+                ItemList.Robot_Arm_UV.get(2L),
+                GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Infinite, 4),
+                ItemList.Circuit_Chip_PPIC.get(4L),
+                CustomItemList.DATApipe.get(32L),
+                GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Trinium, 32),
+        }, ItemList.Hatch_DataAccess_UV.get(1L), null, 60 * 20, 2000000);
+
+        //AdvancedDataAccessHatch
+        RA.addBasicLineRecipe(new ItemStack[]{
+                ItemList.Hull_LuV.get(1L),
+                Itemstack(Core_Items2.getInstance(), 1, 182),
+                ItemList.Tool_DataOrb.get(4),
+                GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Ultimate, 4),
+                ItemList.Circuit_Chip_UHPIC.get(4L),
+                CustomItemList.DATApipe.get(4L),
+                GT_OreDictUnificator.get(OrePrefixes.screw, Materials.HSSS, 32),
+        }, ItemList.Hatch_DataAccess_LuV.get(1L), null, 60 * 20, 30720);
+
+        //DataAccessHatch
+        RA.addPrimitiveLineRecipe(new ItemStack[]{
+                ItemList.Hull_IV.get(1L),
+                Itemstack(Core_Items2.getInstance(), 1, 182),
+                ItemList.Tool_DataStick.get(4),
+                GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Elite, 4),
+                ItemList.Circuit_Chip_HPIC.get(4L),
+                GT_OreDictUnificator.get(OrePrefixes.cableGt02, Materials.TungstenSteel, 4),
+                GT_OreDictUnificator.get(OrePrefixes.screw, Materials.HSSG, 32),
+        }, ItemList.Hatch_DataAccess_EV.get(1L), null, 60 * 20, 7680);
 
         //Heat Exchanger
         RA.addPrimitiveLineRecipe(new ItemStack[]{
@@ -2903,8 +2938,7 @@ public class Gregtech implements Runnable {
                 ItemList.OilDrill1.get(1L), 20 * 20, 120);
 
         //Maintenance Hatch
-        RA
-                .addAssemblerRecipe(ItemList.Casing_LV.get(1), ItemList.Duct_Tape.get(4), GT_Values.NF,
+        RA.addAssemblerRecipe(ItemList.Casing_LV.get(1), ItemList.Duct_Tape.get(4), GT_Values.NF,
                         ItemList.Hatch_Maintenance.get(1L), 40 * 20, 30);
 
         //Quadruple Input Hatch
